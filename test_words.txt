@@ -1,0 +1,28 @@
+абажурный
+а
+абах
+абажурного
+CREATE TABLE IF NOT EXISTS words (
+  IID int(11) NOT NULL AUTO_INCREMENT,
+  word varchar(100) NOT NULL,
+  code int(11) NOT NULL,
+  code_parent int(11) NOT NULL,
+  type set('част','межд','прл','прч','сущ','нар','гл','дееп','союз','предик','предл','ввод','мест','числ') NOT NULL,
+  type_sub enum('поряд','кол','собир','неопр','врем','обст','опред','счет','неизм') DEFAULT NULL,
+  type_ssub enum('кач','спос','степ','места','напр','врем','цель','причин') DEFAULT NULL,
+  plural tinyint(1) DEFAULT NULL,
+  gender enum('муж','жен','ср','общ') DEFAULT NULL,
+  wcase enum('им','род','дат','вин','тв','пр','зват','парт','мест') DEFAULT NULL,
+  comp enum('сравн','прев') DEFAULT NULL,
+  soul tinyint(1) DEFAULT NULL,
+  transit enum('перех','непер','пер/не') DEFAULT NULL,
+  perfect tinyint(1) DEFAULT NULL,
+  face enum('1-е','2-е','3-е','безл') DEFAULT NULL,
+  kind enum('1вид','2вид') DEFAULT NULL,
+  time enum('прош','наст','буд') DEFAULT NULL,
+  inf tinyint(1) DEFAULT NULL,
+  vozv tinyint(1) DEFAULT NULL,
+  nakl enum('пов','страд') DEFAULT NULL,
+  short tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (IID),
+  KEY type (type)
